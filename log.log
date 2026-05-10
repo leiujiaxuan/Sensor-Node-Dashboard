@@ -1,0 +1,1185 @@
+2025-09-17 23:32:53 --> serial_read() thread initialized with frequency = 24, number_of_datasets = 150
+2025-09-17 23:32:56 --> Failed to connect to the arduino: GetOverlappedResult failed (PermissionError(13, 'Access is denied.', None, 5))
+2025-09-17 23:32:56 --> serial_read() thread has been terminated.
+2025-09-17 23:38:12 --> serial_read() thread initialized with frequency = 24, number_of_datasets = 150
+2025-09-17 23:38:15 --> b'AT+FU3AT+B38400OK+FU3\r\n'
+2025-09-17 23:38:15 --> b'OK+B38400\r\n'
+2025-09-17 23:46:30 --> No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_transports\default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        pool_request.request
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\connection.py", line 103, in handle_async_request
+    return await self._connection.handle_async_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\http11.py", line 136, in handle_async_request
+    raise exc
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\http11.py", line 106, in handle_async_request
+    ) = await self._receive_response_headers(**kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\http11.py", line 177, in _receive_response_headers
+    event = await self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\http11.py", line 217, in _receive_event
+    data = await self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.READ_NUM_BYTES, timeout=timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_backends\anyio.py", line 32, in read
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_httpxrequest.py", line 273, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_transports\default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 115, in network_retry_loop
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 108, in do_action
+    return action_cb_task.result()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_updater.py", line 340, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_extbot.py", line 670, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 4611, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 698, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_extbot.py", line 370, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 727, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_baserequest.py", line 304, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_httpxrequest.py", line 297, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ReadError: 
+2025-09-17 23:47:21 --> Data saved to location: C:\Users\leiuj\Desktop\FYP2\data_log\data_2025-09-17.csv with 150 rows
+2025-09-17 23:48:32 --> No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_transports\default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        pool_request.request
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\connection.py", line 103, in handle_async_request
+    return await self._connection.handle_async_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\http11.py", line 136, in handle_async_request
+    raise exc
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\http11.py", line 106, in handle_async_request
+    ) = await self._receive_response_headers(**kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\http11.py", line 177, in _receive_response_headers
+    event = await self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\http11.py", line 231, in _receive_event
+    raise RemoteProtocolError(msg)
+httpcore.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_httpxrequest.py", line 273, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_transports\default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 115, in network_retry_loop
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 108, in do_action
+    return action_cb_task.result()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_updater.py", line 340, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_extbot.py", line 670, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 4611, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 698, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_extbot.py", line 370, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 727, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_baserequest.py", line 304, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_httpxrequest.py", line 297, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.RemoteProtocolError: Server disconnected without sending a response.
+2025-09-18 00:06:12 --> No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_transports\default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        pool_request.request
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\connection.py", line 103, in handle_async_request
+    return await self._connection.handle_async_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\http11.py", line 136, in handle_async_request
+    raise exc
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\http11.py", line 106, in handle_async_request
+    ) = await self._receive_response_headers(**kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\http11.py", line 177, in _receive_response_headers
+    event = await self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\http11.py", line 217, in _receive_event
+    data = await self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.READ_NUM_BYTES, timeout=timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_backends\anyio.py", line 32, in read
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_httpxrequest.py", line 273, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_transports\default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 115, in network_retry_loop
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 108, in do_action
+    return action_cb_task.result()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_updater.py", line 340, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_extbot.py", line 670, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 4611, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 698, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_extbot.py", line 370, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 727, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_baserequest.py", line 304, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_httpxrequest.py", line 297, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ReadError: 
+2025-09-18 00:47:43 --> Data saved to location: C:\Users\leiuj\Desktop\FYP2\data_log\data_2025-09-17.csv with 30 rows
+2025-09-18 00:47:43 --> Data saved to location: C:\Users\leiuj\Desktop\FYP2\data_log\data_2025-09-18.csv with 120 rows
+2025-09-18 01:48:04 --> Data saved to location: C:\Users\leiuj\Desktop\FYP2\data_log\data_2025-09-18.csv with 150 rows
+2025-09-18 02:48:25 --> Data saved to location: C:\Users\leiuj\Desktop\FYP2\data_log\data_2025-09-18.csv with 150 rows
+2025-09-18 16:06:09 --> serial_read() thread initialized with frequency = 24, number_of_datasets = 150
+2025-09-18 16:06:12 --> b'AT+FU3AT+B38400OK+FU3\r\n'
+2025-09-18 16:06:12 --> b'OK+B38400\r\n'
+2025-09-18 16:07:46 --> b'This is test code from sensor node.\r\n'
+2025-09-18 16:15:54 --> b'This is test code from sensor node.\r\n'
+2025-09-18 16:16:46 --> b'This is test code from sensor node.\r\n'
+2025-09-18 16:17:19 --> b'This is test code from sensor node.\r\n'
+2025-09-18 16:17:23 --> b'This is test code from sensor node.\r\n'
+2025-09-18 16:18:23 --> b'This is test code from sensor node.\r\n'
+2025-09-18 16:18:25 --> b'This is test code from sensor node.\r\n'
+2025-09-18 16:21:05 --> serial_read() thread has encountered error: GetOverlappedResult failed (PermissionError(13, 'Access is denied.', None, 5))
+2025-09-18 16:21:05 --> serial_read() thread has been terminated.
+2025-09-18 20:58:28 --> No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_transports\default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        pool_request.request
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\connection.py", line 101, in handle_async_request
+    raise exc
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_backends\auto.py", line 31, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_backends\anyio.py", line 113, in connect_tcp
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_httpxrequest.py", line 273, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_transports\default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 115, in network_retry_loop
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 108, in do_action
+    return action_cb_task.result()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_updater.py", line 340, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_extbot.py", line 670, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 4611, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 698, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_extbot.py", line 370, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 727, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_baserequest.py", line 304, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_httpxrequest.py", line 297, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2025-09-18 20:58:29 --> No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_transports\default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        pool_request.request
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\connection.py", line 101, in handle_async_request
+    raise exc
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_backends\auto.py", line 31, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_backends\anyio.py", line 113, in connect_tcp
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_httpxrequest.py", line 273, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_transports\default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 115, in network_retry_loop
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 108, in do_action
+    return action_cb_task.result()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_updater.py", line 340, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_extbot.py", line 670, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 4611, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 698, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_extbot.py", line 370, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 727, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_baserequest.py", line 304, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_httpxrequest.py", line 297, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2025-09-21 11:56:15 --> serial_read() thread initialized with frequency = 24, number_of_datasets = 150
+2025-09-21 11:56:19 --> b'AT+FU3AT+B38400OK+FU3\r\n'
+2025-09-21 11:56:19 --> b'OK+B38400\r\n'
+2025-09-21 11:56:42 --> b'This is test code from sensor node.\r\n'
+2025-09-21 12:56:52 --> Data saved to location: C:\Users\leiuj\Desktop\FYP2\data_log\data_2025-09-21.csv with 150 rows
+2025-09-21 13:57:08 --> Data saved to location: C:\Users\leiuj\Desktop\FYP2\data_log\data_2025-09-21.csv with 150 rows
+2025-09-21 14:48:55 --> b'This is test code from sensor node.\r\n'
+2025-09-21 14:48:58 --> b'This is test code from sensor node.\r\n'
+2025-09-21 14:49:01 --> b'This is test code from sensor node.\r\n'
+2025-09-21 14:50:55 --> b'This is test code from sensor node.\r\n'
+2025-09-21 14:51:00 --> b'This is test code from sensor node.\r\n'
+2025-09-21 14:53:20 --> b'This is test code from sensor node.\r\n'
+2025-09-21 14:53:22 --> b'This is test code from sensor node.\r\n'
+2025-09-21 14:54:05 --> b'This is test code from sensor node.\r\n'
+2025-09-21 14:54:50 --> b'This is test code from sensor node.\r\n'
+2025-09-21 14:56:24 --> b'This is test code from sensor node.\r\n'
+2025-09-21 14:56:43 --> b'This is test code from sensor node.\r\n'
+2025-09-21 14:56:46 --> b'This is test code from sensor node.\r\n'
+2025-09-21 14:57:00 --> b'This is test code from sensor node.\r\n'
+2025-09-21 14:57:09 --> b'This is test code from sensor node.\r\n'
+2025-09-21 14:57:58 --> b'This is test code from sensor node.\r\n'
+2025-09-21 14:57:59 --> b'This is test code from sensor node.\r\n'
+2025-09-21 14:58:16 --> b'This is test code from sensor node.\r\n'
+2025-09-21 14:58:24 --> b'This is test code from sensor node.\r\n'
+2025-09-21 14:58:33 --> b'This is test code from sensor node.\r\n'
+2025-09-21 14:58:35 --> b'This is test code from sensor node.\r\n'
+2025-09-21 14:59:31 --> b'This is test code from sensor node.\r\n'
+2025-09-21 14:59:33 --> b'This is test code from sensor node.\r\n'
+2025-09-21 15:00:00 --> b'This is test code from sensor node.\r\n'
+2025-09-21 15:00:02 --> b'This is test code from sensor node.\r\n'
+2025-09-21 15:00:29 --> b'This is test code from sensor node.\r\n'
+2025-09-21 15:00:31 --> b'This is test code from sensor node.\r\n'
+2025-09-21 15:00:45 --> b'This is test code from sensor node.\r\n'
+2025-09-21 15:00:47 --> b'This is test code from sensor node.\r\n'
+2025-09-21 15:00:51 --> Decoding failed. Raw data have been saved to: C:\Users\leiuj\Desktop\FYP2\error_log.txt
+2025-09-21 15:01:01 --> serial_read() thread has encountered error: 'NoneType' object is not subscriptable
+2025-09-21 15:01:52 --> b'This is test code from sensor node.\r\n'
+2025-09-21 15:01:55 --> b'This is test code from sensor node.\r\n'
+2025-09-21 15:02:00 --> b'This is test code from sensor node.\r\n'
+2025-09-21 15:02:02 --> b'This is test code from sensor node.\r\n'
+2025-09-21 15:02:11 --> b'This is test code from sensor node.\r\n'
+2025-09-21 15:02:16 --> b'This is test code from sensor node.\r\n'
+2025-09-21 16:08:02 --> serial_read() thread initialized with frequency = 24, number_of_datasets = 150
+2025-09-21 16:08:05 --> b'AT+FU3AT+B38400OK+FU3\r\n'
+2025-09-21 16:08:05 --> b'OK+B38400\r\n'
+2025-09-21 16:08:06 --> b'This is test code from sensor node.\r\n'
+2025-09-21 16:08:14 --> Potential Fire Detected!
+2025-09-21 16:08:20 --> Potential Fire Detected!
+2025-09-21 16:08:29 --> Potential Fire Detected!
+2025-09-21 16:08:37 --> Potential Fire Detected!
+2025-09-21 16:08:52 --> Potential Fire Detected!
+2025-09-21 16:08:59 --> Exception in callback Future.set_result()
+handle: <Handle Future.set_result()>
+Traceback (most recent call last):
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\win11toast.py", line 394, in toast
+    loop = asyncio.get_running_loop()
+RuntimeError: no running event loop
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+asyncio.exceptions.InvalidStateError: invalid state
+2025-09-21 16:09:03 --> Potential Fire Detected!
+2025-09-21 16:09:14 --> Potential Fire Detected!
+2025-09-21 16:09:24 --> Potential Fire Detected!
+2025-09-21 16:09:35 --> Potential Fire Detected!
+2025-09-21 16:14:30 --> b'This is test code from sensor node.\r\n'
+2025-09-21 16:19:47 --> b'This is test code from sensor node.\r\n'
+2025-09-21 16:33:28 --> serial_read() thread initialized with frequency = 24, number_of_datasets = 150
+2025-09-21 16:33:31 --> b'AT+FU3AT+B38400OK+FU3\r\n'
+2025-09-21 16:33:31 --> b'OK+B38400\r\n'
+2025-09-21 17:14:20 --> serial_read() thread initialized with frequency = 24, number_of_datasets = 150
+2025-09-21 17:14:23 --> b'AT+FU3AT+B38400OK+FU3\r\n'
+2025-09-21 17:14:23 --> b'OK+B38400\r\n'
+2025-09-21 17:29:17 --> Data saved to location: C:\Users\leiuj\Desktop\FYP2\data_log\data_2025-09-21.csv with 149 rows
+2025-09-21 18:31:52 --> serial_read() thread initialized with frequency = 24, number_of_datasets = 150
+2025-09-21 18:31:55 --> b'AT+FU3AT+B38400OK+FU3\r\n'
+2025-09-21 18:31:55 --> b'OK+B38400\r\n'
+2025-09-21 19:15:31 --> serial_read() thread has encountered error: GetOverlappedResult failed (PermissionError(13, 'Access is denied.', None, 5))
+2025-09-21 19:15:31 --> serial_read() thread has been terminated.
+2025-09-21 19:18:21 --> serial_read() thread initialized with frequency = 24, number_of_datasets = 150
+2025-09-21 19:18:24 --> b'AT+FU3AT+B38400OK+FU3\r\n'
+2025-09-21 19:18:24 --> b'OK+B38400\r\n'
+2025-09-21 19:23:38 --> serial_read() thread initialized with frequency = 24, number_of_datasets = 150
+2025-09-21 19:23:41 --> b'AT+FU3AT+B38400OK+FU3\r\n'
+2025-09-21 19:23:41 --> b'OK+B38400\r\n'
+2025-09-21 19:29:36 --> Data saved to location: C:\Users\leiuj\Desktop\FYP2\data_log\data_2025-09-21.csv with 150 rows
+2025-09-21 20:29:44 --> Data saved to location: C:\Users\leiuj\Desktop\FYP2\data_log\data_2025-09-21.csv with 150 rows
+2025-09-21 21:29:58 --> Data saved to location: C:\Users\leiuj\Desktop\FYP2\data_log\data_2025-09-21.csv with 150 rows
+2025-09-21 22:30:06 --> Data saved to location: C:\Users\leiuj\Desktop\FYP2\data_log\data_2025-09-21.csv with 150 rows
+2025-09-24 09:00:23 --> serial_read() thread initialized with frequency = 24, number_of_datasets = 150
+2025-09-24 09:00:26 --> b'AT+FU3AT+B38400OK+FU3\r\n'
+2025-09-24 09:00:26 --> b'OK+B38400\r\n'
+2025-09-24 09:01:14 --> b'This is test code from sensor node.\r\n'
+2025-09-24 09:01:16 --> Data saved to location: C:\Users\leiuj\Desktop\FYP2\data_log\data_2025-09-24.csv with 150 rows
+2025-09-24 09:01:57 --> Data saved to location: C:\Users\leiuj\Desktop\FYP2\data_log\data_2025-09-24.csv with 150 rows
+2025-09-24 09:02:38 --> Data saved to location: C:\Users\leiuj\Desktop\FYP2\data_log\data_2025-09-24.csv with 150 rows
+2025-09-24 09:03:50 --> No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_transports\default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        pool_request.request
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\connection.py", line 103, in handle_async_request
+    return await self._connection.handle_async_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\http11.py", line 136, in handle_async_request
+    raise exc
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\http11.py", line 106, in handle_async_request
+    ) = await self._receive_response_headers(**kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\http11.py", line 177, in _receive_response_headers
+    event = await self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\http11.py", line 217, in _receive_event
+    data = await self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.READ_NUM_BYTES, timeout=timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_backends\anyio.py", line 32, in read
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_httpxrequest.py", line 273, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_transports\default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 115, in network_retry_loop
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 108, in do_action
+    return action_cb_task.result()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_updater.py", line 340, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_extbot.py", line 670, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 4611, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 698, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_extbot.py", line 370, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 727, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_baserequest.py", line 304, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_httpxrequest.py", line 297, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ReadError: 
+2025-09-24 09:05:22 --> Decoding failed. Raw data have been saved to: C:\Users\leiuj\Desktop\FYP2\error_log.txt
+2025-09-24 09:05:31 --> serial_read() thread has encountered error: 'NoneType' object is not subscriptable
+2025-09-24 09:06:02 --> Data saved to location: C:\Users\leiuj\Desktop\FYP2\data_log\data_2025-09-24.csv with 150 rows
+2025-09-24 09:06:43 --> Data saved to location: C:\Users\leiuj\Desktop\FYP2\data_log\data_2025-09-24.csv with 150 rows
+2025-09-24 09:07:24 --> Data saved to location: C:\Users\leiuj\Desktop\FYP2\data_log\data_2025-09-24.csv with 150 rows
+2025-09-24 09:08:05 --> Data saved to location: C:\Users\leiuj\Desktop\FYP2\data_log\data_2025-09-24.csv with 150 rows
+2025-09-24 09:08:46 --> Data saved to location: C:\Users\leiuj\Desktop\FYP2\data_log\data_2025-09-24.csv with 150 rows
+2025-09-24 09:10:08 --> Decoding failed. Raw data have been saved to: C:\Users\leiuj\Desktop\FYP2\error_log.txt
+2025-09-24 09:10:14 --> serial_read() thread has encountered error: 'NoneType' object is not subscriptable
+2025-09-24 09:10:49 --> Data saved to location: C:\Users\leiuj\Desktop\FYP2\data_log\data_2025-09-24.csv with 150 rows
+2025-09-24 09:11:29 --> Decoding failed. Raw data have been saved to: C:\Users\leiuj\Desktop\FYP2\error_log.txt
+2025-09-24 09:11:39 --> serial_read() thread has encountered error: 'NoneType' object is not subscriptable
+2025-09-24 11:30:32 --> serial_read() thread initialized with frequency = 24, number_of_datasets = 150
+2025-09-24 11:30:35 --> b'AT+FU3AT+B38400OK+FU3\r\n'
+2025-09-24 11:30:35 --> b'OK+B38400\r\n'
+2025-09-24 11:30:40 --> b'This is test code from sensor node.\r\n'
+2025-09-24 11:45:17 --> serial_read() thread initialized with frequency = 24, number_of_datasets = 150
+2025-09-24 11:45:20 --> b'AT+FU3AT+B38400OK+FU3\r\n'
+2025-09-24 11:45:20 --> b'OK+B38400\r\n'
+2025-09-24 11:46:46 --> Data saved to location: C:\Users\leiuj\Desktop\FYP2\data_log\data_2025-09-24.csv with 150 rows
+2025-09-24 11:49:55 --> serial_read() thread initialized with frequency = 24, number_of_datasets = 150
+2025-09-24 11:49:58 --> b'AT+FU3AT+B38400OK+FU3\r\n'
+2025-09-24 11:49:58 --> b'OK+B38400\r\n'
+2025-09-24 11:57:29 --> serial_read() thread has encountered error: GetOverlappedResult failed (PermissionError(13, 'Access is denied.', None, 5))
+2025-09-24 11:57:29 --> serial_read() thread has been terminated.
+2025-09-24 11:59:11 --> serial_read() thread initialized with frequency = 24, number_of_datasets = 150
+2025-09-24 11:59:37 --> b'12345\n'
+2025-09-24 11:59:46 --> b'123\n'
+2025-09-24 12:00:15 --> Decoding failed. Raw data have been saved to: C:\Users\leiuj\Desktop\FYP2\error_log.txt
+2025-09-24 12:00:28 --> No internet connection. Notification is not sent to the Telegram.
+2025-09-24 12:00:28 --> serial_read() thread has encountered error: 'NoneType' object is not subscriptable
+2025-09-24 12:00:53 --> Potential Fire Detected!
+2025-09-24 12:32:34 --> No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_transports\default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        pool_request.request
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\connection.py", line 101, in handle_async_request
+    raise exc
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_async\connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_backends\auto.py", line 31, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_backends\anyio.py", line 113, in connect_tcp
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_httpxrequest.py", line 273, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_transports\default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 115, in network_retry_loop
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 108, in do_action
+    return action_cb_task.result()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_updater.py", line 340, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_extbot.py", line 670, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 4611, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 698, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\ext\_extbot.py", line 370, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\_bot.py", line 727, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_baserequest.py", line 304, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\leiuj\AppData\Local\Programs\Python\Python313\Lib\site-packages\telegram\request\_httpxrequest.py", line 297, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: All connection attempts failed
+2025-09-24 14:19:23 --> serial_read() thread initialized with frequency = 24, number_of_datasets = 150
+2025-09-24 14:21:39 --> b'1\n'
+2025-09-24 14:21:39 --> b'2\n'
+2025-09-24 14:22:07 --> serial_read() thread has encountered error: Emailaddress ""leiujiaxuan12345@gmail.com"" is not valid according to RFC 2822 standards
+2025-09-24 14:22:07 --> serial_read() thread has been terminated.
+2025-09-24 14:22:33 --> serial_read() thread initialized with frequency = 24, number_of_datasets = 150
+2025-09-24 14:23:16 --> b'121\n'
+2025-09-24 14:23:16 --> b'2\n'
+2025-09-24 14:23:26 --> Data saved to location: C:\Users\leiuj\Desktop\FYP2\data_log\data_2025-09-24.csv with 1 rows
+2025-09-24 14:23:51 --> serial_read() thread has encountered error: Emailaddress ""leiujiaxuan12345@gmail.com"" is not valid according to RFC 2822 standards
+2025-09-24 14:23:51 --> serial_read() thread has been terminated.
+2025-09-24 14:24:28 --> serial_read() thread initialized with frequency = 24, number_of_datasets = 150
+2025-09-24 14:24:59 --> b'1\n'
+2025-09-24 14:25:00 --> b'2\n'
+2025-09-24 14:25:03 --> Data saved to location: C:\Users\leiuj\Desktop\FYP2\data_log\data_2025-09-24.csv with 1 rows
+2025-09-24 14:25:18 --> Potential Fire Detected!
+2025-09-24 14:25:56 --> serial_read() thread initialized with frequency = 24, number_of_datasets = 150
+2025-09-24 14:25:59 --> b'1\n'
+2025-09-24 14:25:59 --> b'2\\\n'
+2025-09-24 14:26:23 --> serial_read() thread has encountered error: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-2698016bff2sm176804605ad.35 - gsmtp')
+2025-09-24 14:26:23 --> serial_read() thread has been terminated.
+2025-09-24 14:28:46 --> serial_read() thread initialized with frequency = 24, number_of_datasets = 150
+2025-09-24 14:28:52 --> b'123\n'
+2025-09-24 14:28:53 --> b'123\n'
+2025-09-24 14:29:06 --> Potential Fire Detected!
+2025-09-24 14:31:07 --> serial_read() thread initialized with frequency = 24, number_of_datasets = 150
+2025-09-24 14:31:44 --> b'1\n'
+2025-09-24 14:31:44 --> b'1\n'
+2025-09-24 14:32:03 --> serial_read() thread has encountered error: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-26980319d02sm178151095ad.119 - gsmtp')
+2025-09-24 14:32:03 --> serial_read() thread has been terminated.
+2025-09-24 14:32:40 --> serial_read() thread initialized with frequency = 24, number_of_datasets = 150
+2025-09-24 14:32:43 --> b'22.1\n'
+2025-09-24 14:32:44 --> b'22.2\n'
+2025-09-24 14:32:56 --> Potential Fire Detected!
+2025-09-24 14:33:23 --> serial_read() thread initialized with frequency = 24, number_of_datasets = 150
+2025-09-24 14:33:25 --> Failed to connect to the arduino: could not open port 'COM6': FileNotFoundError(2, 'The system cannot find the file specified.', None, 2)
+2025-09-24 14:33:25 --> serial_read() thread has been terminated.
+2025-09-24 14:33:27 --> serial_read() thread initialized with frequency = 24, number_of_datasets = 150
+2025-09-24 14:33:33 --> b'11.2\n'
+2025-09-24 14:33:34 --> b'1.\n'
+2025-09-24 14:33:37 --> Decoding failed. Raw data have been saved to: C:\Users\leiuj\Desktop\FYP2\error_log.txt
+2025-09-24 14:33:46 --> serial_read() thread has encountered error: 'NoneType' object is not subscriptable
+2025-09-24 14:33:52 --> Potential Fire Detected!
+2026-05-10 19:36:43 --> generated new fontManager
+2026-05-10 19:37:28 --> serial_read() thread initialized with frequency = 24, number_of_datasets = 150
+2026-05-10 19:37:30 --> Failed to connect to the arduino: could not open port 'COM6': FileNotFoundError(2, 'The system cannot find the file specified.', None, 2)
+2026-05-10 19:37:30 --> serial_read() thread has been terminated.
