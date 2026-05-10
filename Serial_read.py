@@ -254,9 +254,22 @@ def notif_telegram(message):
             await bot.send_message(chat_id=CHAT_ID, text=msg)
         
         asyncio.run(send_msg(message))
+    except telegram.error.InvalidToken:
+        print(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} --> Invalid Telegram bot token. Notification is not sent.")
+        logging.error("Invalid Telegram bot token. Notification is not sent.")
+    except telegram.error.Unauthorized as e:
+        print(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} --> Telegram unauthorized: {e}. Notification is not sent.")
+        logging.error(f"Telegram unauthorized: {e}. Notification is not sent.")
     except telegram.error.NetworkError as e:
         print(f"{datetime.now().strftime("%Y-%m-%d %H:%M:%S")} --> No internet connection. Notification is not sent to the Telegram.")
         logging.error(f"No internet connection. Notification is not sent to the Telegram.")
+    except telegram.error.TelegramError as e:
+        print(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} --> Telegram error: {e}. Notification is not sent.")
+        logging.error(f"Telegram error: {e}. Notification is not sent.")
+    except RuntimeError as e:
+        # e.g. asyncio.run() called from a running event loop
+        print(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} --> Failed to send Telegram notification: {e}")
+        logging.error(f"Failed to send Telegram notification: {e}")
 
 
 def notification_fire(message):

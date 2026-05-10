@@ -7,6 +7,7 @@ import matplotlib
 from matplotlib.dates import HourLocator, DateFormatter, num2date
 import matplotlib.pyplot as plt
 from datetime import datetime,timedelta
+import telegram
 from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes, MessageHandler, filters
 from Serial_read import findall_csv
@@ -17,8 +18,12 @@ config = configparser.ConfigParser()
 config.read("config.ini")
 
 # ==== Variables ===== 
-CHAT_ID = int(config["Telegram"]["chat_id"])
-TOKEN = config["Telegram"]["token"]
+try:
+    CHAT_ID = config.getint("Telegram", "chat_id", fallback=0)
+except ValueError:
+    CHAT_ID = 0
+
+TOKEN = config.get("Telegram", "token", fallback="").strip()
 csv_folder_path = os.path.abspath("data_log")
 plot_folder_path = os.path.abspath("plot")
 csv_zip_path = os.path.abspath("data_log.zip")
@@ -142,8 +147,24 @@ async def getfile_plot(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
         "\tFile does not exist.")
 
 def bot():
-    # build telegram bot
-    app = Application.builder().token(TOKEN).build()
-    app.add_handler(CommandHandler("getfile_csv", getfile_csv))
-    app.add_handler(CommandHandler("getfile_plot", getfile_plot))
-    app.run_polling()
+    # Build and run Telegram bot (best-effort). If token is invalid, disable the bot.
+    if not TOKEN or CHAT_ID == 0:
+        print(f'{datetime.now().strftime("%Y-%m-%d %H:%M:%S")} --> Telegram bot disabled (missing/invalid token or chat_id in config.ini).')
+        return
+
+    try:
+        app = Application.builder().token(TOKEN).build()
+        app.add_handler(CommandHandler("getfile_csv", getfile_csv))
+        app.add_handler(CommandHandler("getfile_plot", getfile_plot))
+        app.run_polling()
+
+    except telegram.error.InvalidToken:
+        print(f'{datetime.now().strftime("%Y-%m-%d %H:%M:%S")} --> Telegram bot disabled (invalid token).')
+    except telegram.error.Unauthorized as e:
+        print(f'{datetime.now().strftime("%Y-%m-%d %H:%M:%S")} --> Telegram bot stopped (unauthorized): {e}')
+    except telegram.error.NetworkError as e:
+        print(f'{datetime.now().strftime("%Y-%m-%d %H:%M:%S")} --> Telegram bot stopped (network error): {e}')
+    except telegram.error.TelegramError as e:
+        print(f'{datetime.now().strftime("%Y-%m-%d %H:%M:%S")} --> Telegram bot stopped (Telegram error): {e}')
+    except Exception as e:
+        print(f'{datetime.now().strftime("%Y-%m-%d %H:%M:%S")} --> Telegram bot crashed: {e}')
