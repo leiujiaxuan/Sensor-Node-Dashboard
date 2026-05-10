@@ -50,6 +50,8 @@ Telegram Bot setup (optional)
     chat_id = <your_telegram_chat_id>
     token = <your_telegram_bot_token>
 
+Guide to setup the Telegram Bot: https://gist.github.com/nafiesl/4ad622f344cd1dc3bb1ecbe468ff9f8a
+
 
 About “Data frequency (seconds)” in the GUI
 
