@@ -32,8 +32,6 @@ Can be installed using this command:
 
     pip install customtkinter pillow pyserial matplotlib mplcursors pandas python-telegram-bot plyer yagmail win11toast 
 
-** Do note that customtkinter does not work well with virtual envinronment I think.
-
 Email alert settings
 
 - To change where fire-alert emails are sent, edit `email_receiver` in `config.ini`.
@@ -44,6 +42,14 @@ Email alert settings
 Run the program
 
 - Run `main.py`.
+
+Telegram Bot setup (optional)
+
+- If you want Telegram alerts and the Telegram bot file download commands to work, you must edit the `[Telegram]` section in `config.ini` and replace these placeholder values with your own:
+
+    chat_id = <your_telegram_chat_id>
+    token = <your_telegram_bot_token>
+
 
 About “Data frequency (seconds)” in the GUI
 
